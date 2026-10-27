@@ -145,9 +145,9 @@ int main() {
         } else if (playerXPercent > (1.f - HARD_LIMIT_PERCENT)) {
             camera.translateWindowPercent({playerXPercent - 1.0f + HARD_LIMIT_PERCENT, 0});
         } else if (playerXPercent < SOFT_LIMIT_PERCENT) {
-            
+            camera.translateWindowPercent({SOFT_CAMERA_ALPHA * (playerXPercent - SOFT_LIMIT_PERCENT), 0});
         } else if (playerXPercent > (1.f - SOFT_LIMIT_PERCENT)) {
-            
+            camera.translateWindowPercent({SOFT_CAMERA_ALPHA * (playerXPercent - 1.0f + SOFT_LIMIT_PERCENT), 0});
         }
 
         //camera.setCameraCenter({player.position.x, WINDOW_HEIGHT * 0.5f});
